@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import useTransactions from "../hooks/useTransactions";
 import { useState } from "react";
+import useTransactions from "../../hooks/useTransactions";
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  animation: fadeIn 0.3s ease-in-out;
 `;
 
 const Input = styled.input`
@@ -13,6 +14,7 @@ const Input = styled.input`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  animation: fadeIn 0.6s ease-in-out;
 `;
 
 const Select = styled.select`
@@ -20,6 +22,7 @@ const Select = styled.select`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  animation: fadeIn 0.6s ease-in-out;
 `;
 
 const Button = styled.button`
@@ -29,6 +32,7 @@ const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  animation: fadeIn 0.9s ease-in-out;
 
   &:hover {
     background-color: #0056b3;

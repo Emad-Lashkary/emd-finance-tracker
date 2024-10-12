@@ -1,17 +1,14 @@
 import styled from "styled-components";
-import Balance from "../UI/Balance";
-import IncomeExpenses from "../UI/IncomeExpenses";
-import TransactionList from "../UI/TransactionList";
-import Chart from "../UI/Chart";
-import useTransactions from "../hooks/useTransactions";
-import Footer from "../UI/Footer";
+import IncomeExpenses from "./IncomeExpenses";
+import TransactionList from "./TransactionList";
+import Footer from "../../UI/Footer";
+import Balance from "./Balance";
 
 const HomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  margin-bottom: 40px;
 `;
 
 const Section = styled.section`
@@ -24,8 +21,6 @@ const Section = styled.section`
 `;
 
 function HomePage() {
-  const { transactions } = useTransactions();
-
   return (
     <HomePageContainer>
       <Section>
@@ -35,12 +30,8 @@ function HomePage() {
         <IncomeExpenses />
       </Section>
       <Section>
-        <Chart transactions={transactions} />
-      </Section>
-      <Section>
         <TransactionList />
       </Section>
-      <Footer />
     </HomePageContainer>
   );
 }

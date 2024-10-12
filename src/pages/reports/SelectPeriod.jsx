@@ -3,8 +3,10 @@ import styled from "styled-components";
 const Select = styled.select`
   margin: 20px 0;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid var(--color-primary-200);
+  border-radius: 8px;
+  background-color: var(--color-primary-100);
+  animation: fadeIn 0.9s ease-in-out;
 `;
 
 function SelectPeriod({ period, setPeriod }) {

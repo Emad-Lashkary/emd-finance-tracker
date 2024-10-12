@@ -22,7 +22,7 @@ const ModalContent = styled.div`
 `;
 
 function Modal({ isShowing, hide, children, modalRef }) {
-  isShowing
+  return isShowing
     ? ReactDOM.createPortal(
         <ModalOverlay>
           <ModalContent ref={modalRef}>

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
-import useTransactions from "../hooks/useTransactions";
-import useModal from "../hooks/useModal";
-import Modal from "./Modal";
+import useTransactions from "../../hooks/useTransactions";
+import useModal from "../../hooks/useModal";
+import Modal from "../../UI/Modal";
 import EditTransactionForm from "./EditTransactionForm";
 
 const ListContainer = styled.div`
@@ -15,6 +15,7 @@ const ListContainer = styled.div`
   background: var(--color-primary-100);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.9s ease-in-out;
 
   /* Custom scrollbar */
   &::-webkit-scrollbar {

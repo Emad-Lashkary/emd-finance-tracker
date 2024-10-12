@@ -7,6 +7,7 @@ const FooterContainer = styled.footer`
   flex-direction: column;
   justify-content: space-around;
   padding: 20px;
+  margin: 20px 0;
   background-color: var(--color-primary-900);
   color: var(--color-primary-100);
 
@@ -72,7 +73,7 @@ function Footer() {
           <FaLinkedin /> linkedin.com/in/emad-lashkary
         </ContactItem>
         <ContactItem>
-          <FaGithub /> github.com/developer
+          <FaGithub /> https://github.com/Emad-Lashkary
         </ContactItem>
       </FooterColumn>
       <FooterColumn>

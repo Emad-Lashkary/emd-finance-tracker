@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import useTransactions from "../hooks/useTransactions";
+import useTransactions from "../../hooks/useTransactions";
 
 const BalanceContainer = styled.div`
   text-align: center;
   font-size: 1.5em;
   margin: 20px 0;
+  animation: fadeIn 0.3s ease-in-out;
 `;
 
 function Balance() {

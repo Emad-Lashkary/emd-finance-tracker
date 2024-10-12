@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import useTransactions from "../hooks/useTransactions";
+import useTransactions from "../../hooks/useTransactions";
 
 const IncomeExpensesContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+  animation: fadeIn 0.6s ease-in-out;
 `;
 
 const Income = styled.div`

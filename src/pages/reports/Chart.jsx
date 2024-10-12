@@ -30,7 +30,7 @@ const ChartContainer = styled.div`
   width: 100%;
   max-width: 800px;
   height: 400px;
-  padding: 10px 0 30px 0;
+  padding: 10px 0 50px 0;
   margin: 0 auto;
 
   & button {
