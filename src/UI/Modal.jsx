@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const ModalOverlay = styled.div`
   position: fixed;
+  font-family: Arial, sans-serif;
   top: 0;
   left: 0;
   width: 100%;
@@ -11,14 +12,28 @@ const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(2px);
 `;
 
 const ModalContent = styled.div`
-  background: white;
+  background: var(--color-primary-200);
   padding: 20px;
   border-radius: 8px;
   max-width: 500px;
   width: 100%;
+
+  & button {
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    background-color: var(--color-primary-300);
+    border-radius: 8px;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: var(--color-primary-400);
+    }
+  }
 `;
 
 function Modal({ isShowing, hide, children, modalRef }) {

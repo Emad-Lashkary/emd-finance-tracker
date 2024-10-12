@@ -1,99 +1,138 @@
 import PropTypes from "prop-types";
-import styled from "styled-components";
-import { useState } from "react";
+import styled, { keyframes } from "styled-components";
+import { useState, useEffect } from "react";
 import useTransactions from "../../hooks/useTransactions";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  animation: fadeIn 0.3s ease-in-out;
+  animation: ${fadeIn} 0.3s ease-in-out;
+
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--color-primary-900);
+    animation: fadeIn 0.3s ease-in-out;
+  }
 `;
 
 const Input = styled.input`
   margin: 10px 0;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-primary-300);
   border-radius: 4px;
-  animation: fadeIn 0.6s ease-in-out;
+  animation: ${fadeIn} 0.6s ease-in-out;
+
+  &:focus {
+    border-color: var(--color-primary-500);
+    outline: none;
+  }
 `;
 
 const Select = styled.select`
   margin: 10px 0;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-primary-300);
   border-radius: 4px;
-  animation: fadeIn 0.6s ease-in-out;
+  animation: ${fadeIn} 0.7s ease-in-out;
 `;
 
 const Button = styled.button`
   padding: 10px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--color-primary-600);
+  color: var(--color-primary-50);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  animation: fadeIn 0.9s ease-in-out;
+  animation: ${fadeIn} 0.9s ease-in-out;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: var(--color-primary-700);
   }
 `;
 
 const EditTransactionForm = ({ transaction, onClose }) => {
   const { transactions, setTransactions } = useTransactions();
-  const [description, setDescription] = useState(transaction.description);
-  const [amount, setAmount] = useState(transaction.amount);
-  const [date, setDate] = useState(transaction.date);
-  const [category, setCategory] = useState(transaction.category);
-  const [type, setType] = useState(transaction.type);
+  const [updatedTransaction, setUpdatedTransaction] = useState(transaction);
+
+  useEffect(() => {
+    setUpdatedTransaction(transaction);
+  }, [transaction]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUpdatedTransaction((prev) => ({
+      ...prev,
+      [name]: name === "amount" ? parseFloat(value) : value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const updatedTransaction = {
-      ...transaction,
-      description,
-      amount: parseFloat(amount),
-      date,
-      category,
-      type,
-    };
-    const updatedTransactions = transactions.map((t) =>
-      t.id === transaction.id ? updatedTransaction : t
+    const isChanged = Object.keys(transaction).some(
+      (key) => transaction[key] !== updatedTransaction[key]
     );
-    setTransactions(updatedTransactions);
-    onClose();
+
+    if (isChanged) {
+      const updatedTransactions = transactions.map((t) =>
+        t.id === transaction.id ? updatedTransaction : t
+      );
+      setTransactions(updatedTransactions);
+      onClose();
+    }
   };
 
   return (
     <Form onSubmit={handleSubmit}>
+      <h2>Edit Transaction</h2>
       <Input
         type="text"
+        name="description"
         placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        value={updatedTransaction.description}
+        onChange={handleChange}
         required
       />
       <Input
         type="number"
+        name="amount"
         placeholder="Amount"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
+        value={updatedTransaction.amount}
+        onChange={handleChange}
         required
       />
       <Input
         type="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
+        name="date"
+        value={updatedTransaction.date}
+        onChange={handleChange}
         required
       />
       <Input
         type="text"
+        name="category"
         placeholder="Category"
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
+        value={updatedTransaction.category}
+        onChange={handleChange}
         required
       />
-      <Select value={type} onChange={(e) => setType(e.target.value)} required>
+      <Select
+        name="type"
+        value={updatedTransaction.type}
+        onChange={handleChange}
+        required
+      >
         <option value="income">Income</option>
         <option value="expense">Expense</option>
         <option value="installment">Installment</option>

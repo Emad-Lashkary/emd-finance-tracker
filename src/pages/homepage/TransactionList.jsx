@@ -4,6 +4,7 @@ import useTransactions from "../../hooks/useTransactions";
 import useModal from "../../hooks/useModal";
 import Modal from "../../UI/Modal";
 import EditTransactionForm from "./EditTransactionForm";
+import { hexToRgba } from "../../helpers/helpers";
 
 const ListContainer = styled.div`
   width: 100%;
@@ -45,6 +46,12 @@ const TransactionItem = styled.div`
     border: none;
     z-index: 1000;
   }
+
+  & .amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 const Indicator = styled.span`
@@ -66,6 +73,31 @@ const Indicator = styled.span`
     }
   }};
   margin-right: 10px;
+`;
+
+const TypeIndicator = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 3px 6px;
+  width: 80px;
+  font-size: 12px;
+  border-radius: 8px;
+
+  background-color: ${(props) => {
+    switch (props.type) {
+      case "income":
+        return hexToRgba("#4caf50");
+      case "expense":
+        return hexToRgba("#f44336");
+      case "installment":
+        return hexToRgba("#2196f3");
+      case "investment":
+        return hexToRgba("#9c27b0");
+      default:
+        return "gray";
+    }
+  }};
+  margin-left: 10px;
 `;
 
 const Description = styled.span`
@@ -113,14 +145,15 @@ function TransactionList() {
   const { isShowing, toggle, modalRef } = useModal();
   const [selectedTransaction, setSelectedTransaction] = useState(null);
 
-  const handleEditClick = (transaction) => {
+  function handleEditClick(transaction) {
     setSelectedTransaction(transaction);
     toggle();
-  };
-
+  }
+  console.log(transactions);
   return (
     <ListContainer>
       <h2>Transactions</h2>
+
       {transactions.map((transaction) => (
         <TransactionItem key={transaction.id}>
           <div>
@@ -130,7 +163,14 @@ function TransactionList() {
               {transaction.description}
             </Description>
           </div>
-          <span>${transaction.amount.toFixed(2)}</span>
+
+          <div className="amount">
+            <span>${transaction.amount.toFixed(2)}</span>
+            <TypeIndicator type={transaction.type}>
+              {transaction.type}
+            </TypeIndicator>
+          </div>
+
           <div>
             <DeleteButton onClick={() => deleteTransaction(transaction.id)}>
               Delete
