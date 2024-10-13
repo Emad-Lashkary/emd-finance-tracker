@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import MenuButton from "./MenuButton";
 import Modal from "../Modal";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -27,6 +28,7 @@ function Header() {
       <Logo />
       <NavLinks />
       <MenuButton onClick={toggleModal} />
+      <ThemeSwitcher />
       <Modal show={showModal} toggleModal={toggleModal} />
     </HeaderContainer>
   );

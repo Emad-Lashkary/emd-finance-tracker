@@ -6,17 +6,45 @@ const IncomeExpensesContainer = styled.div`
   justify-content: space-between;
   margin: 20px 0;
   animation: fadeIn 0.6s ease-in-out;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  margin: 20px 0;
+  background-color: var(--color-primary-200);
 `;
 
 const Income = styled.div`
   flex: 1;
+  height: max-content;
   text-align: center;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid var(--color-primary-400);
+  border-radius: 8px 0 0 8px;
+  padding: 30px 0 30px 20px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: rgba(76, 175, 79, 0.5);
+  }
+
+  & h3 {
+    margin-bottom: 5px;
+  }
 `;
 
 const Expenses = styled.div`
   flex: 1;
   text-align: center;
+  border-radius: 0 8px 8px 0;
+  padding: 30px 0 30px 20px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: rgba(244, 67, 54, 0.5);
+  }
+
+  & h3 {
+    margin-bottom: 5px;
+  }
 `;
 
 function IncomeExpenses() {

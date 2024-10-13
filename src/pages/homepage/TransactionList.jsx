@@ -30,6 +30,7 @@ const ListContainer = styled.div`
 const TransactionItem = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
   padding: 10px;
   border-bottom: 1px solid var(--color-primary-400);
   position: relative;

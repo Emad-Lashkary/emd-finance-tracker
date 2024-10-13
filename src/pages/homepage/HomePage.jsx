@@ -25,9 +25,9 @@ function HomePage() {
       <Section>
         <Balance />
       </Section>
-      <Section>
-        <IncomeExpenses />
-      </Section>
+      {/* <Section> */}
+      <IncomeExpenses />
+      {/* </Section> */}
       <Section>
         <TransactionList />
       </Section>
