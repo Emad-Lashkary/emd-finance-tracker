@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 const AdvancedSection = styled.section`
   margin: 2rem 0;
-  width: 1000px;
+  max-width: 800px;
   text-align: center;
-  background: var(--color-primary-100);
+  background: var(--color-primary-200);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   h2 {
     margin-bottom: 1rem;
@@ -19,15 +18,14 @@ const AdvancedSection = styled.section`
     padding: 0;
 
     li {
-      background: var(--color-primary-200);
+      background: var(--color-primary-300);
       margin: 0.5rem 0;
       padding: 0.5rem 1rem;
       border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: var(--color-primary-300);
+        background-color: var(--color-primary-400);
       }
     }
   }

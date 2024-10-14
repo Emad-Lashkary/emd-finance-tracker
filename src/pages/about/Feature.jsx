@@ -4,15 +4,14 @@ const FeatureWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 800px;
+  max-width: 600px;
   background-color: var(--color-primary-100);
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 
   svg {

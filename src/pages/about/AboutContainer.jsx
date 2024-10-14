@@ -8,6 +8,7 @@ const AboutContainer = styled.div`
   padding: 2rem;
   background-color: var(--color-primary-50);
   color: var(--color-primary-900);
+  animation: fadeIn 0.3s ease-in-out;
 `;
 
 const Header = styled.h1`

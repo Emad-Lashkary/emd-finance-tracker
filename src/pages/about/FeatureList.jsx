@@ -10,7 +10,7 @@ import Feature from "./Feature";
 const FeatureSection = styled.section`
   margin: 2rem 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 2rem;
   justify-content: center;
 `;
