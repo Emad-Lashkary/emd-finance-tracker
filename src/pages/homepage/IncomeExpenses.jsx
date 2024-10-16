@@ -48,13 +48,10 @@ const Expenses = styled.div`
 `;
 
 function IncomeExpenses() {
-  const { transactions } = useTransactions();
-  const income = transactions
-    .filter((t) => t.type === "income")
-    .reduce((acc, t) => acc + t.amount, 0);
-  const expenses = transactions
-    .filter((t) => t.type === "expense")
-    .reduce((acc, t) => acc + t.amount, 0);
+  const { calculateTotalIncome, calculateTotalExpenses } = useTransactions();
+  const income = calculateTotalIncome();
+
+  const expenses = calculateTotalExpenses();
 
   return (
     <IncomeExpensesContainer>
@@ -63,7 +60,7 @@ function IncomeExpenses() {
         <p>${income.toFixed(2)}</p>
       </Income>
       <Expenses>
-        <h3>Expenses</h3>
+        <h3>Expenses + Installments</h3>
         <p>${expenses.toFixed(2)}</p>
       </Expenses>
     </IncomeExpensesContainer>

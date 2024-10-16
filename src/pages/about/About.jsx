@@ -1,22 +1,31 @@
 import React from "react";
-import AboutContainerComponent from "./AboutContainer";
 import FeatureList from "./FeatureList";
 import AdvancedFeatures from "./AdvancedFeatures";
+import styled from "styled-components";
+import AboutHeader from "./AboutHeader";
+
+const AboutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 45px;
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-900);
+`;
 
 const About = () => (
-  <AboutContainerComponent>
-    <section>
-      <p>
-        EMD Finance Tracker is your personal finance management tool, designed
-        to help you keep track of your income, expenses, savings, and
-        investments effortlessly. With user-friendly features and advanced
-        functionalities, our app ensures you have a clear view of your financial
-        health at any given time.
-      </p>
-    </section>
+  <AboutContainer>
+    <AboutHeader>
+      EMD Finance Tracker is your personal finance management tool, designed to
+      help you keep track of your income, expenses, savings, and investments
+      effortlessly. With user-friendly features and advanced functionalities,
+      our app ensures you have a clear view of your financial health at any
+      given time.
+    </AboutHeader>
     <FeatureList />
     <AdvancedFeatures />
-  </AboutContainerComponent>
+  </AboutContainer>
 );
 
 export default About;

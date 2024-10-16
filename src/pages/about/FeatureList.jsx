@@ -13,6 +13,7 @@ const FeatureSection = styled.section`
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
+  text-align: center;
 `;
 
 const features = [

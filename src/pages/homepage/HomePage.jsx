@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import IncomeExpenses from "./IncomeExpenses";
-import TransactionList from "./TransactionList";
+import TransactionList from "./transactionList/TransactionList";
 import Balance from "./Balance";
 
 const HomePageContainer = styled.div`

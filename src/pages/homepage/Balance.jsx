@@ -18,11 +18,8 @@ const BalanceContainer = styled.div`
 `;
 
 function Balance() {
-  const { transactions } = useTransactions();
-  const totalBalance = transactions.reduce(
-    (acc, transaction) => acc + transaction.amount,
-    0
-  );
+  const { calculateBalance } = useTransactions();
+  const totalBalance = calculateBalance();
 
   return (
     <BalanceContainer>

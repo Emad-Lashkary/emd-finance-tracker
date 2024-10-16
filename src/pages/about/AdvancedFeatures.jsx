@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const AdvancedSection = styled.section`
   margin: 2rem 0;
-  max-width: 800px;
+  max-width: 900px;
   text-align: center;
-  background: var(--color-primary-200);
-  padding: 2rem;
+  background: var(--color-primary-100);
+  padding: 30px 60px;
   border-radius: 8px;
 
   h2 {
@@ -15,17 +15,17 @@ const AdvancedSection = styled.section`
 
   ul {
     list-style: none;
-    padding: 0;
+    padding: 10px 80px 0 80px;
 
     li {
-      background: var(--color-primary-300);
+      background: var(--color-primary-200);
       margin: 0.5rem 0;
       padding: 0.5rem 1rem;
       border-radius: 4px;
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: var(--color-primary-400);
+        background-color: var(--color-primary-300);
       }
     }
   }

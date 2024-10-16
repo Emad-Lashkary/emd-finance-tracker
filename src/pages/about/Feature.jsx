@@ -17,7 +17,7 @@ const FeatureWrapper = styled.div`
   svg {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--color-primary-500);
+    color: var(--color-primary-600);
   }
 
   h3 {
