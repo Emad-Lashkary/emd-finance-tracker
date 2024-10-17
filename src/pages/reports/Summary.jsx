@@ -9,6 +9,10 @@ const StyledSummary = styled.div`
   width: 100%;
   margin-bottom: 20px;
   animation: fadeIn 0.6s ease-in-out;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const SummaryItem = styled.div`

@@ -26,6 +26,10 @@ const ListContainer = styled.div`
   -ms-overflow-style: none;
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary-700) transparent;
+
+  @media (max-width: 767px) {
+    height: 700px;
+  }
 `;
 
 function TransactionList() {

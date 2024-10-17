@@ -34,6 +34,11 @@ const ModalContent = styled.div`
       background-color: var(--color-primary-400);
     }
   }
+
+  @media (max-width: 768px) {
+    width: 350px;
+    max-width: 80%;
+  }
 `;
 
 function Modal({ isShowing, hide, children, modalRef }) {

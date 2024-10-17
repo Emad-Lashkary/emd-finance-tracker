@@ -29,6 +29,24 @@ const AdvancedSection = styled.section`
       }
     }
   }
+
+  @media (max-width: 767px) {
+    padding: 20px 10px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    ul {
+      font-size: 11px;
+      text-align: start;
+      padding: 10px 5px 0 5px;
+    }
+  }
 `;
 
 const AdvancedFeatures = () => (
@@ -36,12 +54,12 @@ const AdvancedFeatures = () => (
     <h2>Advanced Features</h2>
     <p>
       Our finance tracker app is built with the latest technologies like Vite,
-      React, and Styled Components. We utilize React Router for seamless
+      React, and Styled Components. I utilize React Router for seamless
       navigation and include advanced features like:
     </p>
     <ul>
       <li>Responsive Design for all device sizes</li>
-      <li>Dark Mode for a comfortable viewing experience</li>
+      <li>Various themes for a comfortable viewing experience</li>
       <li>Custom Hooks for reusable logic</li>
       <li>Context API for state management</li>
     </ul>

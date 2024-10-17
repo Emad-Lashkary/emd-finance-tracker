@@ -12,6 +12,10 @@ import About from "./pages/about/About";
 const AppContainer = styled.div`
   font-family: Arial, sans-serif;
   padding: 20px;
+
+  @media (max-width: 767px) {
+    padding: 10px;
+  }
 `;
 
 function App() {

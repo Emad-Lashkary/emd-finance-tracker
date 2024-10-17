@@ -22,6 +22,22 @@ const StyledThemeSwitcher = styled.div`
       border-color: var(--color-primary-700);
     }
   }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    & select {
+      padding: 7px;
+      font-size: 15px;
+
+      background-color: var(--color-primary-500);
+      cursor: pointer;
+
+      & select:focus {
+        outline: none;
+        border-color: var(--color-primary-700);
+      }
+    }
+  }
 `;
 
 function ThemeSwitcher() {

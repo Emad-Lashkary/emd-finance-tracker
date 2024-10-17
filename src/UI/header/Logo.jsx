@@ -10,6 +10,11 @@ const Img = styled.img`
   &:hover {
     filter: opacity(0.6) drop-shadow(0 0 0 var(--color-primary-900));
   }
+
+  @media (max-width: 767px) {
+    width: 5rem;
+    height: 5rem;
+  }
 `;
 
 const Logo = () => <Img src="./logo.png" alt="logo" />;

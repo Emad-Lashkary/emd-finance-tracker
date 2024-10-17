@@ -11,6 +11,10 @@ const ReportsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
+  @media (max-width: 767px) {
+    padding: 15px;
+  }
 `;
 
 const Section = styled.section`
@@ -21,6 +25,10 @@ const Section = styled.section`
   background: var(--color-primary-200);
   border-radius: 8px;
   animation: fadeIn 0.3s ease-in-out;
+
+  @media (max-width: 767px) {
+    padding: 20px 10px;
+  }
 `;
 
 function ReportsPage() {

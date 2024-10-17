@@ -22,6 +22,18 @@ const Header = styled.h1`
     font-weight: 500;
     text-align: center;
   }
+
+  @media (max-width: 767px) {
+    padding: 20px;
+
+    & h2 {
+      font-size: 30px;
+      text-align: center;
+    }
+    & p {
+      font-size: 15px;
+    }
+  }
 `;
 
 function AboutHeader({ children }) {

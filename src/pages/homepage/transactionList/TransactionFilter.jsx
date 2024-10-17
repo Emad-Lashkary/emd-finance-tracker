@@ -5,6 +5,7 @@ const FilterContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 
   button {
     display: flex;

@@ -8,7 +8,12 @@ import { BsQuestionSquareFill } from "react-icons/bs";
 const Nav = styled.nav`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 15px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -52,12 +57,24 @@ const StyledLink = styled(Link)`
   }
 
   & > *:first-child {
-    padding: 0.6rem;
-    font-size: 1.2rem;
+    padding: 10px;
+    font-size: 20px;
     border-radius: 40% 10% 40% 10%;
     width: 40%;
     height: auto;
     transition: background-color 0.3s ease;
+
+    @media (max-width: 1000px) {
+      width: auto;
+    }
+  }
+  @media (max-width: 767px) {
+    color: var(--color-primary-900);
+  }
+  & span {
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 `;
 

@@ -45,6 +45,10 @@ const ChartContainer = styled.div`
   & button:hover {
     background-color: var(--color-primary-50);
   }
+
+  @media (max-width: 767px) {
+    height: 300px;
+  }
 `;
 
 function Chart({ transactions }) {

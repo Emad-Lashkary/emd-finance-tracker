@@ -8,6 +8,9 @@ const CenteredContainer = styled.div`
   align-items: center;
   height: 100vh;
   background-color: var(--color-primary-50);
+  @media (max-width: 767px) {
+    height: 70vh;
+  }
 `;
 
 const FormContainer = styled.div`
@@ -18,6 +21,11 @@ const FormContainer = styled.div`
   background: var(--color-primary-200);
   border-radius: 8px;
   animation: fadeIn 0.3s ease-in-out;
+
+  @media (max-width: 767px) {
+    padding: 20px 10px;
+    margin: 10px 30px;
+  }
 
   @keyframes fadeIn {
     from {
@@ -35,6 +43,10 @@ const FormContainer = styled.div`
     text-align: center;
     color: var(--color-primary-900);
     animation: fadeIn 0.6s ease-in-out;
+
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+    }
   }
 `;
 
@@ -55,6 +67,11 @@ const Input = styled.input`
     border-color: var(--color-primary-500);
     outline: none;
   }
+
+  @media (max-width: 767px) {
+    margin: 7px 0;
+    padding: 7px;
+  }
 `;
 
 const Select = styled.select`
@@ -68,10 +85,16 @@ const Select = styled.select`
     border-color: var(--color-primary-500);
     outline: none;
   }
+
+  @media (max-width: 767px) {
+    margin: 7px 0;
+    padding: 7px;
+  }
 `;
 
 const Button = styled.button`
   padding: 12px;
+  margin-top: 10px;
   background-color: var(--color-primary-600);
   color: var(--color-primary-50);
   border: none;
@@ -86,6 +109,10 @@ const Button = styled.button`
 
   &:active {
     transform: scale(0.98);
+  }
+
+  @media (max-width: 767px) {
+    padding: 10px;
   }
 `;
 

@@ -24,6 +24,19 @@ const TransactionItemComponent = styled.div`
     justify-content: space-between;
     align-items: center;
   }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: center;
+
+    & .amount {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 `;
 
 const Indicator = styled.span`
@@ -109,6 +122,12 @@ const DeleteButton = styled.button`
   }
 `;
 
+const Buttons = styled.div`
+  @media (max-width: 767px) {
+    margin: 0 auto;
+  }
+`;
+
 function TransactionItem({
   transaction,
   handleEditClick,
@@ -123,20 +142,22 @@ function TransactionItem({
           {transaction.description}
         </Description>
       </div>
+
       <div className="amount">
         <span>${transaction.amount.toFixed(2)}</span>
         <TypeIndicator type={transaction.type}>
           {transaction.type}
         </TypeIndicator>
       </div>
-      <div>
+
+      <Buttons>
         <DeleteButton onClick={() => handleDeleteTransaction(transaction.id)}>
           Delete
         </DeleteButton>
         <EditButton onClick={() => handleEditClick(transaction)}>
           Edit
         </EditButton>
-      </div>
+      </Buttons>
     </TransactionItemComponent>
   );
 }

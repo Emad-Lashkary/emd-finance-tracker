@@ -15,6 +15,16 @@ const BalanceContainer = styled.div`
     font-size: 28px;
     font-weight: 500;
   }
+
+  @media (max-width: 767px) {
+    gap: 15px;
+    font-size: 25px;
+    margin: 15px 0;
+    h3 {
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
 `;
 
 function Balance() {

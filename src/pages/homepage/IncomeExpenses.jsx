@@ -11,6 +11,11 @@ const IncomeExpensesContainer = styled.div`
   border-radius: 8px;
   margin: 20px 0;
   background-color: var(--color-primary-200);
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin: 15px 0;
+  }
 `;
 
 const Income = styled.div`
@@ -28,6 +33,11 @@ const Income = styled.div`
 
   & h3 {
     margin-bottom: 5px;
+  }
+
+  @media (max-width: 767px) {
+    border-right: none;
+    border-bottom: 1px solid var(--color-primary-400);
   }
 `;
 
