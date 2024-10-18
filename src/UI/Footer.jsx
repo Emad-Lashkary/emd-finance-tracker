@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaPhone, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Logo from "./header/Logo";
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -13,6 +14,18 @@ const FooterContainer = styled.footer`
 
   @media (min-width: 768px) {
     flex-direction: row;
+  }
+
+  & > *:last-child {
+    margin-right: 20px;
+    justify-self: center;
+    align-self: center;
+    width: 10rem;
+    height: 10rem;
+
+    @media (max-width: 768px) {
+      margin: 20px 0;
+    }
   }
 `;
 
@@ -36,10 +49,16 @@ const FooterColumn = styled.div`
   }
 `;
 
-const ContactItem = styled.div`
+const ContactItem = styled.a`
+  text-decoration: none;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  color: var(--color-primary-200);
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   svg {
     margin-right: 8px;
@@ -63,16 +82,19 @@ function Footer() {
     <FooterContainer>
       <FooterColumn>
         <h4>Developer Contact</h4>
-        <ContactItem>
+        <ContactItem href="tel:+989350633890">
           <FaPhone /> +98 935 063 3890
         </ContactItem>
-        <ContactItem>
+
+        <ContactItem href="https://mail.google.com/mail/?view=cm&fs=1&to=emad.lashkar@gmail.com">
           <FaEnvelope /> emad.lashkar@gmail.com
         </ContactItem>
-        <ContactItem>
+
+        <ContactItem href="https://www.linkedin.com/in/emad-lashkary">
           <FaLinkedin /> linkedin.com/in/emad-lashkary
         </ContactItem>
-        <ContactItem>
+
+        <ContactItem href="https://github.com/Emad-Lashkary">
           <FaGithub /> https://github.com/Emad-Lashkary
         </ContactItem>
       </FooterColumn>
@@ -88,7 +110,9 @@ function Footer() {
         <QuickLink to="/">Home</QuickLink>
         <QuickLink to="/add-transaction">Add transaction</QuickLink>
         <QuickLink to="/reports">Reports</QuickLink>
+        <QuickLink to="/about">About</QuickLink>
       </FooterColumn>
+      <Logo />
     </FooterContainer>
   );
 }

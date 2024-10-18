@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Img = styled.img`
@@ -17,6 +18,9 @@ const Img = styled.img`
   }
 `;
 
-const Logo = () => <Img src="./logo.png" alt="logo" />;
+function Logo() {
+  const navigate = useNavigate();
+  return <Img src="./logo.png" alt="logo" onClick={() => navigate("/")} />;
+}
 
 export default Logo;

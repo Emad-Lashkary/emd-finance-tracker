@@ -33,13 +33,14 @@ const ListContainer = styled.div`
 `;
 
 function TransactionList() {
-  const { transactions, deleteTransaction } = useTransactions(); // include deleteTransaction
+  const { transactions, deleteTransaction } = useTransactions();
   const { isShowing, toggle, modalRef } = useModal();
   const [selectedTransaction, setSelectedTransaction] = useState(null);
   const [searchParams] = useSearchParams();
   const [filteredTransactions, setFilteredTransactions] = useState([]);
 
   useEffect(() => {
+    searchParams.set("filter", "all");
     const filter =
       searchParams.get("filter") === "all"
         ? transactions
@@ -47,16 +48,16 @@ function TransactionList() {
             (transaction) => transaction.type === searchParams.get("filter")
           );
     setFilteredTransactions(filter);
-  }, [transactions, searchParams]); // re-run this effect when transactions or searchParams change
+  }, [transactions, searchParams]);
 
-  const handleEditClick = (transaction) => {
+  function handleEditClick(transaction) {
     setSelectedTransaction(transaction);
     toggle();
-  };
+  }
 
-  const handleDeleteTransaction = (transactionId) => {
+  function handleDeleteTransaction(transactionId) {
     deleteTransaction(transactionId);
-  };
+  }
 
   return (
     <ListContainer>
@@ -67,7 +68,7 @@ function TransactionList() {
           key={transaction.id}
           transaction={transaction}
           handleEditClick={handleEditClick}
-          handleDeleteTransaction={handleDeleteTransaction} // pass down to item
+          handleDeleteTransaction={handleDeleteTransaction}
         />
       ))}
       <Modal isShowing={isShowing} hide={toggle} modalRef={modalRef}>
