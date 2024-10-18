@@ -11,12 +11,10 @@ const TransactionItemComponent = styled.div`
   & > :nth-child(3) {
     justify-self: end;
   }
-  &:hover .description {
+  &:active .description {
     position: absolute;
     display: block;
-    opacity: 50%;
-    background: none;
-    border: none;
+    opacity: 90%;
     z-index: 1000;
   }
   & .amount {
@@ -35,6 +33,10 @@ const TransactionItemComponent = styled.div`
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+    }
+
+    &:active .description {
+      display: none;
     }
   }
 `;
@@ -84,16 +86,17 @@ const TypeIndicator = styled.div`
   margin-left: 10px;
 `;
 
-const Description = styled.span`
+const Description = styled.div`
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20%;
+  color: var(--color-primary-800);
+  background-color: var(--color-primary-200);
+  border: 1px solid var(--color-primary-300);
   padding: 5px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 const EditButton = styled.button`

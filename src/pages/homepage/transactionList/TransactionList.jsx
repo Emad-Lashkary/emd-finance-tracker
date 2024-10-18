@@ -36,11 +36,16 @@ function TransactionList() {
   const { transactions, deleteTransaction } = useTransactions();
   const { isShowing, toggle, modalRef } = useModal();
   const [selectedTransaction, setSelectedTransaction] = useState(null);
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [filteredTransactions, setFilteredTransactions] = useState([]);
 
   useEffect(() => {
-    searchParams.set("filter", "all");
+    if (!searchParams.get("filter")) {
+      setSearchParams({ filter: "all" });
+    }
+  }, [searchParams, setSearchParams]);
+
+  useEffect(() => {
     const filter =
       searchParams.get("filter") === "all"
         ? transactions

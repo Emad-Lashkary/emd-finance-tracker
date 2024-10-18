@@ -5,15 +5,16 @@ import Logo from "./header/Logo";
 
 const FooterContainer = styled.footer`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   padding: 20px;
   margin: 20px 0;
   background-color: var(--color-primary-900);
   color: var(--color-primary-100);
 
-  @media (min-width: 768px) {
-    flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 50px;
   }
 
   & > *:last-child {
@@ -32,7 +33,7 @@ const FooterContainer = styled.footer`
 const FooterColumn = styled.div`
   flex: 1;
   padding: 0 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 
   h4 {
     margin-bottom: 10px;
@@ -42,10 +43,6 @@ const FooterColumn = styled.div`
   p {
     margin: 0;
     color: var(--color-primary-100);
-  }
-
-  @media (min-width: 768px) {
-    margin-bottom: 0;
   }
 `;
 
