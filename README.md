@@ -70,4 +70,4 @@ A sleek, responsive web application for tracking daily transactions and visualiz
 
 ## License
 
-This project, including all code and documentation, was developed by Emad Lashkary...
+This project, including all code and documentation, was developed by Emad Lashkary.
