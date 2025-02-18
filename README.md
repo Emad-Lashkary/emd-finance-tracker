@@ -1,6 +1,6 @@
 # EMD Finance Tracker
 
-A sleek, responsive web application for tracking daily transactions and visualizing financial data through dynamic charts.
+A sleek, responsive web application for tracking daily transactions and visualizing financial data through dynamic charts
 
 ## Table of Contents
 
